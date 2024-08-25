@@ -1,0 +1,52 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "CMake: build the selected target",
+			"command": "./build.sh --target ${fileBasenameNoExtension}",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "CMake build task for the selected file"
+		},
+		{
+			"type": "shell",
+			"label": "CMake: build the selected target and execution",
+			"command": "./build.sh --target ${fileBasenameNoExtension} && ./bin/${fileBasenameNoExtension}/${fileBasenameNoExtension}",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "CMake build task for the selected file and execution"
+		},
+		{
+			"type": "shell",
+			"label": "CMake: build all targets",
+			"command": "./build.sh",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "CMake build task for all targets"
+		},
+		{
+			"type": "shell",
+			"label": "CMake: build all targets on release mode",
+			"command": "./build.sh --release",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "CMake: build all targets on release mode"
+		},
+		{
+			"type": "shell",
+			"label": "CMake: build and execute tests",
+			"command": "./test.sh",
+			"group": "build",
+			"detail": "CMake build task for all targets"
+		}
+	]
+}
